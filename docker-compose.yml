@@ -1,0 +1,22 @@
+services:
+  db:
+    image: mysql:8.4
+    container_name: quickbite-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: quickbite
+      MYSQL_USER: quickbite
+      MYSQL_PASSWORD: quickbite
+      MYSQL_ROOT_PASSWORD: root-dev-password
+    ports:
+      - "3306:3306"
+    volumes:
+      - quickbite-mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uquickbite", "-pquickbite"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+
+volumes:
+  quickbite-mysql-data:

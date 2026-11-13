@@ -1,0 +1,27 @@
+### Java / IntelliJ ###
+backend/target/
+backend/.idea/
+.idea/
+*.iml
+*.class
+
+### Node ###
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+
+### Secrets and environment overrides ###
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+*.local
+
+### Local config ###
+.DS_Store
+Thumbs.db
